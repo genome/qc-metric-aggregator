@@ -1,8 +1,8 @@
-version 1.0
+version development
 
 task AggregateQcMetrics {
   input {
-    File metrics_directory
+    Directory metrics_directory
     File thresholds_file
     String sample_id
     String output_file_name
