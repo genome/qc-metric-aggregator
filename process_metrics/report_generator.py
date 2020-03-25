@@ -17,8 +17,7 @@ class ReportGenerator:
         data = self.gather_metrics()
         headers = data[0]
         values = data[1]
-        outfile_name = os.path.join(output_path, f"{self.sample_id}.qc_results.tsv")
-        with open(outfile_name, 'w') as fout:
+        with open(output_path, 'w') as fout:
             print(str.join("\t", headers), file=fout)
             print(str.join("\t", values), file=fout)
 

@@ -11,39 +11,39 @@ Parse individual metrics out of a directory of QC results for genomic data and o
 
 `pip install qc-metric-aggregator`
 
+------------
 
 #### Usage
 
 ------------
 
-`aggregate-qc-metrics -o /Users/acoffman/Desktop -t thresholds.yml HG00096 /opt/qc/results/HG00096/WholeGenomeSingleSampleQc/`
-
-    usage: aggregate-qc-metrics [-h] -o OUTPUT_PATH -t THRESHOLD_FILE
-                                sample_name metrics_dir
+    usage: aggregate-qc-metrics [-h]
+                                sample_name metrics_dir output_file threshold_file
 
     positional arguments:
-      sample_name           The sample name or id for which the QC metrics apply
-      metrics_dir           The directory to search for metric files, often a
-                            cromwell run directory
+      sample_name     The sample name or id for which the QC metrics apply
+      metrics_dir     The directory to search for metric files, often a cromwell
+                      run directory
+      output_file     File path to store the finalized mertrics TSV
+      threshold_file  Path to the yml thresholds file to validate against
 
     optional arguments:
-      -h, --help            show this help message and exit
+      -h, --help      show this help message and exit
 
-    named arguments:
-      -o OUTPUT_PATH, --output-path OUTPUT_PATH
-                            File path to store the finalized mertrics TSV
-      -t THRESHOLD_FILE, --threshold-file THRESHOLD_FILE
-                            Path to the yml thresholds file to validate against
 
-**Output formats**
+Example invocation:
+
+    aggregate-qc-metrics HG00096 /opt/qc/results/HG00096/WholeGenomeSingleSampleQc /opt/qc/scores/qc_results.tsv thresholds.yml
 
 ------------
+**Output formats**
+
 
 Coming soon...
 
+------------
 **Threshold file**
 
-------------
 You will need to pass in a YAML file containing pass/fail threshold tests for the metrics you are interested in. The file format consists of a list of objects each containing the following keys:
 
 | Key | Value | Comments |
@@ -55,9 +55,9 @@ You will need to pass in a YAML file containing pass/fail threshold tests for th
 An example can be [found here](https://github.com/genome/qc-metric-aggregator/blob/master/thresholds.yml.example)
 
 
+------------
 **Supported Metrics**
 
-------------
 | Name  |  Description | Originating Tool  |
 |---|---|---|
 | FREEMIX | Freemix  |  VerifyBamId2 |
@@ -74,9 +74,9 @@ An example can be [found here](https://github.com/genome/qc-metric-aggregator/bl
 | PERCENT_DUPLICATION  | Percent duplicate marked reads  | Picard CollectDuplicateMetrics  |
 
 
+------------
 **Adding Additional Metrics**
 
-------------
 
 To add support for additional metrics you simply need to subclass [Metric](https://github.com/genome/qc-metric-aggregator/blob/master/process_metrics/metrics/metric.py) and register it in [AvailableMetrics](https://github.com/genome/qc-metric-aggregator/blob/master/process_metrics/metrics/available_metrics.py)
 
