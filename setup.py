@@ -11,10 +11,13 @@ setup(
     long_description_content_type="text/markdown",
     author = 'Adam Coffman',
     author_email = 'acoffman@wustl.edu',
-    version = '0.1.0',
+    version = '0.1.1',
     license = 'MIT',
     url = 'https://github.com/genome/qc-metric-aggregator',
-    packages = ['process_metrics'],
+    packages = [
+        'process_metrics',
+        'process_metrics.metrics'
+        ],
     install_requires = [
         'pyyaml'
     ],
