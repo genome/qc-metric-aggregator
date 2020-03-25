@@ -1,0 +1,39 @@
+- metric_name: FREEMIX
+  value: 0.01
+  operator: '<'
+
+- metric_name: Q20_BASES
+  value: 86000000000
+  operator: '>='
+
+- metric_name: MEAN_COVERAGE
+  value: 30
+  operator: '>='
+
+- metric_name: PCT_10X
+  value: 0.95
+  operator: '>'
+
+- metric_name: PCT_30X
+  value: NA
+  operator: '='
+
+- metric_name: PCT_CHIMERAS
+  value: 0.05
+  operator: '<'
+
+- metric_name: READ1_PF_MISMATCH_RATE
+  value: 0.05
+  operator: '<'
+
+- metric_name: READ2_PF_MISMATCH_RATE
+  value: 0.05
+  operator: '<'
+
+- metric_name: MEDIAN_INSERT_SIZE
+  value: NA
+  operator: '='
+
+- metric_name: MEDIAN_ABSOLUTE_DEVIATION
+  value: NA
+  operator: '='

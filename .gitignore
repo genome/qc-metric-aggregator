@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+.vim/
+dist/
+*.egg-info/
+.DS_Store
+.mypy_cache/
