@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/genome/qc-metric-aggregator.svg?branch=master)](https://travis-ci.org/genome/qc-metric-aggregator)
+
     usage: aggregate-qc-metrics [-h] -o OUTPUT_PATH -t THRESHOLD_FILE
                                 sample_name metrics_dir
 
