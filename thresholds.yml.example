@@ -14,26 +14,30 @@
   value: 0.95
   operator: '>'
 
-- metric_name: PCT_30X
-  value: NA
-  operator: '='
+- metric_name: PCT_20X
+  value: 0.95
+  operator: '>'
+
+#- metric_name: PCT_30X
+#  value: NA
+#  operator: '='
 
 - metric_name: PCT_CHIMERAS
   value: 0.05
   operator: '<'
 
-- metric_name: READ1_PF_MISMATCH_RATE
-  value: 0.05
-  operator: '<'
-
-- metric_name: READ2_PF_MISMATCH_RATE
-  value: 0.05
-  operator: '<'
-
-- metric_name: MEDIAN_INSERT_SIZE
-  value: NA
-  operator: '='
-
-- metric_name: MEDIAN_ABSOLUTE_DEVIATION
-  value: NA
-  operator: '='
+#- metric_name: READ1_PF_MISMATCH_RATE
+#  value: 0.05
+#  operator: '<'
+#
+#- metric_name: READ2_PF_MISMATCH_RATE
+#  value: 0.05
+#  operator: '<'
+#
+#- metric_name: MEDIAN_INSERT_SIZE
+#  value: NA
+#  operator: '='
+#
+#- metric_name: MEDIAN_ABSOLUTE_DEVIATION
+#  value: NA
+#  operator: '='

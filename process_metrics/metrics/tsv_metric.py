@@ -3,6 +3,8 @@ import csv
 import glob
 import os.path
 
+from collections import OrderedDict
+
 from abc import ABC, abstractmethod
 
 class TSVMetric:
@@ -42,13 +44,30 @@ class TSVMetric:
     def read_metric(self, filename: str) -> str:
         values = []
         with open(filename) as file:
-            reader = csv.DictReader(file, delimiter=self.delimiter())
-            for row in reader:
-                values.append(row[self.metric_column_name()])
+            if self.skip_commented_lines():
+                file_without_comments = filter(lambda row: row.strip() and not row.startswith('#'), file)
+                reader = csv.DictReader(file_without_comments, delimiter=self.delimiter())
+            else:
+                reader = csv.DictReader(file, delimiter=self.delimiter())
 
-        if len(values) > 1:
+            for row in reader:
+                if self.custom_filter(row):
+                    values.append(row[self.metric_column_name()])
+                    if self.take_first_value():
+                        break
+
+        if len(values) > 1 and not self.take_first_value():
             raise Exception(f"Ambiguous metric value. Found {len(values)} values for {self.metric_column_name()}.")
         if len(values) == 0:
             raise Exception(f"Missing metric value. Found {len(values)} values for {self.metric_column_name()}.")
 
         return values[0]
+
+    def skip_commented_lines(self) -> bool:
+        return True
+
+    def take_first_value(self) -> bool:
+        return False
+
+    def custom_filter(self, row: OrderedDict[str,str]) -> bool:
+        return True

@@ -23,7 +23,7 @@ def generate_report() -> None:
 
     thresholds = ThresholdFileParser(args.threshold_file).thresholds()
     validator = QcValidator(args.metrics_dir)
-    available_metrics = AvailableMetrics()
+    available_metrics = AvailableMetrics(args.sample_name)
 
     gen = ReportGenerator(args.sample_name, thresholds, available_metrics, validator)
     gen.generate_report(args.output_path)
