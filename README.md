@@ -1,19 +1,37 @@
+# qc-metric-aggregator
+
 [![Build Status](https://travis-ci.org/genome/qc-metric-aggregator.svg?branch=master)](https://travis-ci.org/genome/qc-metric-aggregator)
 
-    usage: aggregate-qc-metrics [-h] -o OUTPUT_PATH -t THRESHOLD_FILE
-                                sample_name metrics_dir
+Parse individual metrics out of a directory of QC results for genomic data and output a report containing the desired metrics and the overall PASS/FAIL status of the sample.
 
-    positional arguments:
-      sample_name           The sample name or id for which the QC metrics apply
-      metrics_dir           The directory to search for metric files, often a
-                            cromwell run directory
 
-    optional arguments:
-      -h, --help            show this help message and exit
+#### Installation
 
-    named arguments:
-      -o OUTPUT_PATH, --output-path OUTPUT_PATH
-                            File path to store the finalized mertrics TSV
-      -t THRESHOLD_FILE, --threshold-file THRESHOLD_FILE
-                            Path to the yml thresholds file to validate against
+------------
+
+
+#### Usage
+
+------------
+
+**Threshold file**
+
+------------
+
+
+
+**Supported Metrics**
+
+------------
+
+
+**Adding Additional Metrics**
+
+------------
+
+
+**Output Formats**
+
+------------
+
 

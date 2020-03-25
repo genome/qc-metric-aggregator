@@ -1,7 +1,7 @@
 from .metrics import Metric
 from .qc_validation_result import QcValidationResult
 
-from typing import Any, Callable, Mapping
+from typing import Any, Callable, Mapping, Optional
 
 class QcValidator:
     def __init__(self, metrics_dir: str) -> None:
@@ -12,10 +12,11 @@ class QcValidator:
                 '<=': lambda v, t : float(v) <= float(t),
                 '>': lambda v, t : float(v) > float(t),
                 '>=': lambda v, t : float(v) >= float(t),
-                '=': lambda v, t : v == t
+                '=': lambda v, t : v == t,
+                'report': lambda v, t: True
         }
 
-    def validate(self, m: Metric, operation: str, threshold: str) -> QcValidationResult:
+    def validate(self, m: Metric, operation: str, threshold: Optional[str]) -> QcValidationResult:
         comparison_function = self.evaluators.get(operation)
 
         if comparison_function:

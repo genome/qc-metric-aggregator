@@ -1,6 +1,5 @@
 import yaml
 
-
 from typing import List
 
 from .metric_threshold import MetricThreshold
@@ -16,13 +15,13 @@ class ThresholdFileParser:
         for t in self.file_contents:
             if 'metric_name' not in t:
                 raise Exception(f"metric_name is required for a threshold")
-            if 'value' not in t:
-                raise Exception(f"value is required for a threshold")
             if 'operator' not in t:
                 raise Exception(f"operator is required for a threshold")
+            if 'value' not in t and t['operator'] != 'report':
+                raise Exception(f"value is required for a threshold")
 
             metric_thresholds.append(
-                MetricThreshold(t['metric_name'], t['value'], t['operator'])
+                MetricThreshold(t['metric_name'], t.get('value'), t['operator'])
             )
 
         return metric_thresholds

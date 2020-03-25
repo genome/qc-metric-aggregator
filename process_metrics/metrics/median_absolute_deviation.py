@@ -3,26 +3,26 @@ from typing import Dict
 from .metric import Metric
 from .tsv_metric import TSVMetric
 
-class PercentChimeras(Metric[float], TSVMetric):
+class MedianAbsoluteDeviation(Metric[float], TSVMetric):
 
     def value(self, metrics_dir: str) -> float:
         value = self.extract_metric(metrics_dir)
         return float(value)
 
     def name(self) -> str:
-        return 'PCT_CHIMERAS'
+        return 'MEDIAN_ABSOLUTE_DEVIATION'
 
     def metric_column_name(self) -> str:
         return self.name()
 
     def metric_file_pattern(self) -> str:
-        return rf".+{self.sample_id}\.alignment_summary_metrics"
+        return rf".+{self.sample_id}\.insert_size_metrics"
 
     def custom_filter(self, row: Dict[str,str]) -> bool:
         return all([
-            row['CATEGORY'] == 'PAIR',
-            row['SAMPLE'].strip(),
-            not row['READ_GROUP'].strip(),
-            not row['LIBRARY'].strip(),
+            not row['READ_GROUP'],
+            not row['LIBRARY'],
         ])
 
+    def take_first_value(self) -> bool:
+        return True

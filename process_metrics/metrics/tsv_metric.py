@@ -3,7 +3,7 @@ import csv
 import glob
 import os.path
 
-from collections import OrderedDict
+from typing import Dict
 
 from abc import ABC, abstractmethod
 
@@ -69,5 +69,5 @@ class TSVMetric:
     def take_first_value(self) -> bool:
         return False
 
-    def custom_filter(self, row: OrderedDict[str,str]) -> bool:
+    def custom_filter(self, row: Dict[str,str]) -> bool:
         return True
