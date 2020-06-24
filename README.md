@@ -1,7 +1,6 @@
 # qc-metric-aggregator
 
-[![Build Status](https://travis-ci.org/genome/qc-metric-aggregator.svg?branch=master)](https://travis-ci.org/genome/qc-metric-aggregator)
-
+[![Build Status](https://travis-ci.org/genome/qc-metric-aggregator.svg?branch=master)](https://travis-ci.org/genome/qc-metric-aggregator) 
 Parse individual metrics out of a directory of QC results for genomic data and output a report containing the desired metrics and the overall PASS/FAIL status of the sample.
 
 
@@ -72,6 +71,10 @@ An example can be [found here](https://github.com/genome/qc-metric-aggregator/bl
 | MEDIAN_INSERT_SIZE  | Library insert size median  | Picard CollectInsertSizeMetrics  |
 | MEDIAN_ABSOLUTE_DEVIATION  | Library insert size mad  | Picard CollectInsertSizeMetrics |
 | PERCENT_DUPLICATION  | Percent duplicate marked reads  | Picard CollectDuplicateMetrics  |
+| MEAN_TARGET_COVERAGE  | The mean coverage of a target region.  | Picard CollectHsMetrics  |
+| PCT_TARGET_BASES_10X  | The fraction of all target bases achieving 10X or greater coverage | Picard CollectHsMetrics  |
+| PCT_TARGET_BASES_20X  | The fraction of all target bases achieving 20X or greater coverage | Picard CollectHsMetrics  |
+| PCT_TARGET_BASES_30X  | The fraction of all target bases achieving 30X or greater coverage |  Picard CollectHsMetrics |
 
 
 ------------

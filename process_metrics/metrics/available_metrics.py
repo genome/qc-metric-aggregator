@@ -11,6 +11,10 @@ from .read1_mismatch_rate import Read1MismatchRate
 from .read2_mismatch_rate import Read2MismatchRate
 from .median_absolute_deviation import MedianAbsoluteDeviation
 from .percent_duplication import PercentDuplication
+from .mean_target_coverage import MeanTargetCoverage
+from .percent_target_10x import PercentTarget10x
+from .percent_target_20x import PercentTarget20x
+from .percent_target_30x import PercentTarget30x
 
 from typing import List, Mapping, Optional
 
@@ -28,7 +32,11 @@ class AvailableMetrics:
                 Read1MismatchRate(sample_id),
                 Read2MismatchRate(sample_id),
                 MedianAbsoluteDeviation(sample_id),
-                PercentDuplication(sample_id)
+                PercentDuplication(sample_id),
+                MeanTargetCoverage(sample_id),
+                PercentTarget10x(sample_id),
+                PercentTarget20x(sample_id),
+                PercentTarget30x(sample_id)
         ]
 
         self.metrics_by_name: Mapping[str, Metric] = {}
