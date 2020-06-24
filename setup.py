@@ -11,7 +11,7 @@ setup(
     long_description_content_type="text/markdown",
     author = 'Adam Coffman',
     author_email = 'acoffman@wustl.edu',
-    version = '0.1.2',
+    version = '0.1.3',
     license = 'MIT',
     url = 'https://github.com/genome/qc-metric-aggregator',
     packages = [
