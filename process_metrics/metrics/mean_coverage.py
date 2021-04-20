@@ -14,7 +14,7 @@ class MeanCoverage(Metric[float], TSVMetric):
         return self.name()
 
     def metric_file_pattern(self) -> str:
-        return rf".+{self.sample_id}\.raw_wgs_metrics"
+        return rf".+/{self.sample_id}\.raw_wgs_metrics"
 
     def take_first_value(self) -> bool:
         return True

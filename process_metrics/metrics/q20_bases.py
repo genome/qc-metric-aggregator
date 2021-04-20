@@ -14,4 +14,4 @@ class Q20Bases(Metric[float], TSVMetric):
         return self.name()
 
     def metric_file_pattern(self) -> str:
-        return rf".+{self.sample_id}\.quality_yield_metrics"
+        return rf".+/{self.sample_id}\.quality_yield_metrics"

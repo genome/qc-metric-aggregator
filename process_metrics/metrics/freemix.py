@@ -14,7 +14,7 @@ class Freemix(Metric[float], TSVMetric):
         return self.name()
 
     def metric_file_pattern(self) -> str:
-        return rf".+{self.sample_id}\.verify_bam_id\..+"
+        return rf".+/{self.sample_id}\.verify_bam_id\..+"
 
     def skip_commented_lines(self) -> bool:
         return False

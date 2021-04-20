@@ -16,7 +16,7 @@ class PercentChimeras(Metric[float], TSVMetric):
         return self.name()
 
     def metric_file_pattern(self) -> str:
-        return rf".+{self.sample_id}\.alignment_summary_metrics"
+        return rf".+/{self.sample_id}\.alignment_summary_metrics"
 
     def custom_filter(self, row: Dict[str,str]) -> bool:
         return all([
