@@ -72,6 +72,7 @@ An example can be [found here](https://github.com/genome/qc-metric-aggregator/bl
 | MEDIAN_INSERT_SIZE  | Library insert size median  | Picard CollectInsertSizeMetrics  |
 | MEDIAN_ABSOLUTE_DEVIATION  | Library insert size mad  | Picard CollectInsertSizeMetrics |
 | PERCENT_DUPLICATION  | Percent duplicate marked reads  | Picard CollectDuplicateMetrics  |
+| MEAN_BAIT_COVERAGE  | The mean coverage of a bait region.  | Picard CollectHsMetrics  |
 | MEAN_TARGET_COVERAGE  | The mean coverage of a target region.  | Picard CollectHsMetrics  |
 | PCT_TARGET_BASES_10X  | The fraction of all target bases achieving 10X or greater coverage | Picard CollectHsMetrics  |
 | PCT_TARGET_BASES_20X  | The fraction of all target bases achieving 20X or greater coverage | Picard CollectHsMetrics  |

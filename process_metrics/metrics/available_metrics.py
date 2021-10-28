@@ -11,6 +11,7 @@ from .read1_mismatch_rate import Read1MismatchRate
 from .read2_mismatch_rate import Read2MismatchRate
 from .median_absolute_deviation import MedianAbsoluteDeviation
 from .percent_duplication import PercentDuplication
+from .mean_bait_coverage import MeanBaitCoverage
 from .mean_target_coverage import MeanTargetCoverage
 from .percent_target_10x import PercentTarget10x
 from .percent_target_20x import PercentTarget20x
@@ -33,6 +34,7 @@ class AvailableMetrics:
                 Read2MismatchRate(sample_id),
                 MedianAbsoluteDeviation(sample_id),
                 PercentDuplication(sample_id),
+                MeanBaitCoverage(sample_id),
                 MeanTargetCoverage(sample_id),
                 PercentTarget10x(sample_id),
                 PercentTarget20x(sample_id),
