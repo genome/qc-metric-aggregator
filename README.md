@@ -67,6 +67,8 @@ An example can be [found here](https://github.com/genome/qc-metric-aggregator/bl
 | PCT_20X  | Percent coverage at 20x  | Picard CollectWgsMetrics  |
 | PCT_30X  | Percent coverage at 30x |  Picard CollectWgsMetrics |
 | PCT_CHIMERAS   | Percent chimeras (PAIR)   | Picard CollectAlignmentSummaryMetrics  |
+| PCT_EXC_BASEQ  | The fraction of aligned bases that were filtered out because they were of low base quality | Picard CollectHsMetrics |
+| PCT_EXC_DUPE   | The fraction of aligned bases that were filtered out because they were in reads marked as duplicates | Picard CollectHsMetrics |
 | READ1_PF_MISMATCH_RATE  |  Read 1 base mismatch rate | Picard CollectAlignmentSummaryMetrics  |
 | READ2_PF_MISMATCH_RATE  |  Read 2 base mismatch rate |  Picard CollectAlignmentSummaryMetrics |
 | MEDIAN_INSERT_SIZE  | Library insert size median  | Picard CollectInsertSizeMetrics  |

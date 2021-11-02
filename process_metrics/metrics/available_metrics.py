@@ -6,6 +6,8 @@ from .percent_10x import Percent10x
 from .percent_20x import Percent20x
 from .percent_30x import Percent30x
 from .percent_chimeras import PercentChimeras
+from .percent_excluded_base_quality import PercentExcludedBaseQuality
+from .percent_excluded_duplicates import PercentExcludedDuplicates
 from .median_insert_size import MedianInsertSize
 from .read1_mismatch_rate import Read1MismatchRate
 from .read2_mismatch_rate import Read2MismatchRate
@@ -29,6 +31,8 @@ class AvailableMetrics:
                 Percent20x(sample_id),
                 Percent30x(sample_id),
                 PercentChimeras(sample_id),
+                PercentExcludedBaseQuality(sample_id),
+                PercentExcludedDuplicates(sample_id),
                 MedianInsertSize(sample_id),
                 Read1MismatchRate(sample_id),
                 Read2MismatchRate(sample_id),
